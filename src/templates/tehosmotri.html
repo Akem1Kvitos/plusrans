@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<table border=1>
+    <tr>
+        <td>Гаражный №</td>
+        <td>Дата прохождения техосмотра</td>
+        <td>ТО действителен до</td>
+        <td>Разрешение на допуск</td>
+        <td>Разница (количество дней до конца ТО)</td>
+        <td>Списанные</td>
+    </tr>
+    {% for t in tehosmotri %}
+    <tr>
+        <td>{{t.garage_num}}</td>
+        <td>{{t.data_prohojd_tehosmotra}}</td>
+        <td>{{t.to_deistvitelen_do}}</td>
+        <td>{{t.razreshenie_na_dopusk}}</td>
+        <td>{{t.raznica}}</td>
+        <td>{{t.spisannie}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<form method="get" action="{{ url_for('strahovki.add_strahovki_template')}}">
+        <input type="submit" value="Добавить страховку" name="add"></form>
+
+<table border=1>
+    <tr>
+        <td>Гаражный номер</td>
+        <td>Марка А/м</td>
+        <td>Гос № а/м</td>
+        <td>№ Страхов. Свидет</td>
+        <td>Дата выдачи</td>
+        <td>Срок страх.</td>
+        <td>Застрах. По</td>
+        <td>Примечание</td>
+    </tr>
+    {% for s in strahovki %}
+    <tr>
+        <td>{{s.garage_num }}</td>
+        <td>{{s.avto_marka}}</td>
+        <td>{{s.gos_avto_num}}</td>
+        <td>{{s.num_strah_sved}}</td>
+        <td>{{s.data_vidachi }}</td>
+        <td>{{s.srok_strah}}</td>
+        <td>{{s.zastrah_po}}</td>
+        <td>{{s.note}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}

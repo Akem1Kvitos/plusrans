@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<form method="get" action="{{ url_for('voditeli.add_voditeli_template')}}">
+        <input type="submit" value="Добавить водителя" name="add"></form>
+<table border=1>
+    <tr>
+        <td>Работает с</td>
+        <td>Фамилия Имя Отчество</td>
+        <td>а/к</td>
+        <td>Дата рождения</td>
+        <td>№ В/У</td>
+        <td>Срок действия</td>
+        <td>Категории</td>
+        <td>№ Мед/с</td>
+        <td>Срок действия</td>
+        <td>Категории</td>
+        <td>Прим.</td>
+        <td>Категория Д</td>
+        <td>Телефон</td>
+        <td>Мед. лег</td>
+        <td>Кровь</td>
+        <td>Газель</td>
+        <td>Соц</td>
+        <td>Скор</td>
+        <td>Маз</td>
+        <td>Автобус</td>
+        <td>Разряд</td>
+        <td>Класс</td>
+    </tr>
+    {% for v in voditeli %}
+    <tr>
+        <td>{{v.rabotaet_s}}</td>
+        <td>{{v.fio}}</td>
+        <td>{{v.a_k}}</td>
+        <td>{{v.data_rojd}}</td>
+        <td>{{v.v_u_number}}</td>
+        <td>{{v.v_u_srok_dejstvia}}</td>
+        <td>{{v.v_u_category}}</td>
+        <td>{{v.med_s_number}}</td>
+        <td>{{v.med_s_srok_dejstvia}}</td>
+        <td>{{v.med_s_category}}</td>
+        <td>{{v.note}}</td>
+        <td>{{v.d_category}}</td>
+        <td>{{v.phone_number}}</td>
+        <td>{{v.med_leg}}</td>
+        <td>{{v.blood}}</td>
+        <td>{{v.gazelle}}</td>
+        <td>{{v.soc}}</td>
+        <td>{{v.scor}}</td>
+        <td>{{v.maz}}</td>
+        <td>{{v.bus}}</td>
+        <td>{{v.razrjad}}</td>
+        <td>{{v.class}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Добавить водителя</h1>
+<form action="" method="post" novalidate>
+{{ form.hidden_tag() }}
+<p>{{ form.rabotaet_s.label }}<br>{{ form.rabotaet_s}}</p>
+<p>{{ form.fio.label }}<br>{{ form.fio}}</p>
+<p>{{ form.a_k.label }}<br>{{ form.a_k}}</p>
+<p>{{ form.data_rojd.label }}<br>{{ form.data_rojd}}</p>
+<p>{{ form.v_u_number.label }}<br>{{ form.v_u_number}}</p>
+<p>{{ form.v_u_srok_dejstvia.label }}<br>{{ form.v_u_srok_dejstvia}}</p>
+<p>{{ form.v_u_category.label }}<br>{{ form.v_u_category}}</p>
+<p>{{ form.med_s_number.label }}<br>{{ form.med_s_number}}</p>
+<p>{{ form.med_s_srok_dejstvia.label }}<br>{{ form.med_s_srok_dejstvia}}</p>
+<p>{{ form.med_s_category.label }}<br>{{ form.med_s_category}}</p>
+<p>{{ form.note.label }}<br>{{ form.note}}</p>
+<p>{{ form.d_category.label }}<br>{{ form.d_category}}</p>
+<p>{{ form.phone_number.label }}<br>{{ form.phone_number}}</p>
+<p>{{ form.med_leg.label }}<br>{{ form.med_leg}}</p>
+<p>{{ form.blood.label }}<br>{{ form.blood}}</p>
+<p>{{ form.gazelle.label }}<br>{{ form.gazelle}}</p>
+<p>{{ form.soc.label }}<br>{{ form.soc}}</p>
+<p>{{ form.scor.label }}<br>{{ form.scor}}</p>
+<p>{{ form.maz.label }}<br>{{ form.maz}}</p>
+<p>{{ form.bus.label }}<br>{{ form.bus}}</p>
+<p>{{ form.razrjad.label }}<br>{{ form.razrjad}}</p>
+<p>{{ form.v_class.label }}<br>{{ form.v_class}}</p>
+<p>{{ form.submit() }}</p>
+</form>
+{% endblock content %}
