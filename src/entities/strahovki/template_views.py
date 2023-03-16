@@ -21,3 +21,9 @@ def add_strahovki_template():
         app.config.strahovki_service.insert(data.__dict__)
         return redirect('/strahovki')
     return render_template('strahovki_form.html', title='Добавить страховку', form=form)
+
+
+@strahovki_temp.route('/<int:field_id>', methods=["GET"])
+def delete_strahovka(field_id: int):
+    app.config.strahovki_service.delete(field_id)
+    return redirect('/strahovki')

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Добавить техосмотр</h1>
+<form action="" method="post" novalidate>
+{{ form.hidden_tag() }}
+<p>{{ form.garage_num.label }}<br>{{ form.garage_num}}</p>
+<p>{{ form.data_prohojd_tehosmotra.label}}<br>{{ form.data_prohojd_tehosmotra}}</p>
+<p>{{ form.to_deistvitelen_do.label }}<br>{{ form.to_deistvitelen_do}}</p>
+<p>{{ form.razreshenie_na_dopusk.label }}<br>{{ form.razreshenie_na_dopusk}}</p>
+<p>{{ form.raznica.label }}<br>{{ form.raznica}}</p>
+<p>{{ form.spisannie.label }}<br>{{ form.spisannie}}</p>
+<p>{{ form.submit() }}</p>
+</form>
+{% endblock content %}

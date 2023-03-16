@@ -2,9 +2,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+<form method="get" action="{{ url_for('tehosmotri.add_tehosmotri_template')}}">
+        <input type="submit" value="Добавить техосмотр" name="add"></form>
+
 <table border=1>
     <tr>
-        <td>Гаражный №</td>
+        <td>Гаражный номер</td>
         <td>Дата прохождения техосмотра</td>
         <td>ТО действителен до</td>
         <td>Разрешение на допуск</td>
@@ -19,6 +22,7 @@
         <td>{{t.razreshenie_na_dopusk}}</td>
         <td>{{t.raznica}}</td>
         <td>{{t.spisannie}}</td>
+        <td><a href="{{ url_for('tehosmotri.delete_tehosmotri', field_id = t.id_teh_osmotri )}}"><input type="submit" value="УДАЛИТЬ"></a></td>
     </tr>
     {% endfor %}
 </table>

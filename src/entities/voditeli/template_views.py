@@ -21,3 +21,9 @@ def add_voditeli_template():
         app.config.voditeli_service.insert(data)
         return redirect('/voditeli')
     return render_template('voditeli_add_form.html', title='Добавить водителя', form=form)
+
+
+@voditeli_temp.route('/<int:field_id>', methods=["GET"])
+def delete_voditeli(field_id: int):
+    app.config.voditeli_service.delete(field_id)
+    return redirect('/voditeli')

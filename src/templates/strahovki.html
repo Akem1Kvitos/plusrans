@@ -26,6 +26,7 @@
         <td>{{s.srok_strah}}</td>
         <td>{{s.zastrah_po}}</td>
         <td>{{s.note}}</td>
+        <td><a href="{{ url_for('strahovki.delete_strahovka', field_id = s.id_strahovki )}}"><input type="submit" value="УДАЛИТЬ"></a></td>
     </tr>
     {% endfor %}
 </table>

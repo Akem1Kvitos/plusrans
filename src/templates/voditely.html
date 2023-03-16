@@ -53,6 +53,7 @@
         <td>{{v.bus}}</td>
         <td>{{v.razrjad}}</td>
         <td>{{v.class}}</td>
+        <td><a href="{{ url_for('voditeli.delete_voditeli', field_id = v.iddrivers )}}"><input type="submit" value="УДАЛИТЬ"></a></td>
     </tr>
     {% endfor %}
 </table>
