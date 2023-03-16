@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "plusrans"
+version = "0.1.0"
+description = ""
+authors = ["Vladislav Kvit <kvitvlad@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^2.2.3"
+mysql-connector-python = "^8.0.32"
+appconfig = "^0.1"
+python-dotenv = "^1.0.0"
+waitress = "^2.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
