@@ -22,6 +22,7 @@
         <td>{{t.razreshenie_na_dopusk}}</td>
         <td>{{t.raznica}}</td>
         <td>{{t.spisannie}}</td>
+        <td><a href="{{ url_for('tehosmotri.change_tehosmotri', entry = t )}}"><input type="submit" value="ИЗМЕНИТЬ"></a></td>
         <td><a href="{{ url_for('tehosmotri.delete_tehosmotri', field_id = t.id_teh_osmotri )}}"><input type="submit" value="УДАЛИТЬ"></a></td>
     </tr>
     {% endfor %}

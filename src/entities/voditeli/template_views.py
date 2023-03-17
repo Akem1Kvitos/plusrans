@@ -1,6 +1,6 @@
-from flask import Blueprint, current_app as app, render_template, redirect
+from flask import Blueprint, current_app as app, render_template, redirect, request
 
-from src.entities.tools import exclude_keys
+from src.entities.tools import exclude_keys, get_entry_data_and_id_form, TablesEnum
 from src.entities.voditeli.forms import VoditelAddForm
 from src.entities.voditeli.schemas import VoditelSchema
 
@@ -17,10 +17,21 @@ def get_voditeli_template():
 def add_voditeli_template():
     form = VoditelAddForm()
     if form.validate_on_submit():
-        data = VoditelSchema(**exclude_keys(form.data)).reshape_voditel_data()
-        app.config.voditeli_service.insert(data)
+        data = VoditelSchema(**exclude_keys(form.data))
+        app.config.voditeli_service.insert(data.__dict__)
         return redirect('/voditeli')
     return render_template('voditeli_add_form.html', title='Добавить водителя', form=form)
+
+
+@voditeli_temp.route("/change", methods=["GET", "POST"])
+def change_voditeli():
+    entry_data, entry_id = get_entry_data_and_id_form(request, TablesEnum.VODITEL)
+    form = VoditelAddForm(**entry_data)
+    if form.validate_on_submit():
+        data = VoditelSchema(**exclude_keys(form.data))
+        app.config.voditeli_service.update(field_id=entry_id, body=data.__dict__)
+        return redirect('/voditeli')
+    return render_template('/voditeli_add_form.html', title='Изменить водителя', form=form)
 
 
 @voditeli_temp.route('/<int:field_id>', methods=["GET"])

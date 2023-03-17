@@ -36,7 +36,7 @@ class VoditeliService(BaseService):
                     "maz": res[19],
                     "bus": res[20],
                     "razrjad": res[21],
-                    "class": res[22]
+                    "klass": res[22]
                 } for res in results
             ]
         }

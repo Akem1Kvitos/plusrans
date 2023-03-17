@@ -9,5 +9,4 @@ class TehosmotrSchema:
     razreshenie_na_dopusk: str = ""
     raznica: str = ""
     spisannie: str = ""
-    submit: str = ""
 

@@ -9,8 +9,8 @@ def main():
     load_dotenv()
     config = AppConfig()
     app = create_app(config)
-    # serve(app, host="0.0.0.0", port=config.service_port, threads=config.workers)
-    app.run(host="0.0.0.0", port=config.service_port, debug=True)
+    serve(app, host="0.0.0.0", port=config.service_port, threads=config.workers)
+    # app.run(host="0.0.0.0", port=config.service_port, debug=True)
 
 
 if __name__ == "__main__":
