@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Добавить страховку</h1>
+<form action="" method="post" novalidate>
+{{ form.hidden_tag() }}
+<p>{{ form.garage_num.label }}<br>{{ form.garage_num}}</p>
+<p>{{ form.avto_marka.label }}<br>{{ form.avto_marka}}</p>
+<p>{{ form.gos_avto_num.label }}<br>{{ form.gos_avto_num}}</p>
+<p>{{ form.num_strah_sved.label }}<br>{{ form.num_strah_sved}}</p>
+<p>{{ form.data_vidachi.label }}<br>{{ form.data_vidachi}}</p>
+<p>{{ form.srok_strah.label }}<br>{{ form.srok_strah}}</p>
+<p>{{ form.zastrah_po.label }}<br>{{ form.zastrah_po}}</p>
+<p>{{ form.note.label }}<br>{{ form.note}}</p>
+<p>{{ form.submit() }}</p>
+</form>
+{% endblock content %}

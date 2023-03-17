@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <form method="get" action="{{ url_for('voditeli.get_voditeli_template')}}">
+        <input type="submit" value="Водители" name="voditely"></form>
+    <form method="get" action="{{ url_for('strahovki.get_strahovki_template')}}">
+        <input type="submit" value="Страховки" name="strahovki"></form>
+    <form method="get" action="{{ url_for('tehosmotri.get_tehosmotri_template')}}">
+        <input type="submit" value="Техосмотры" name="tehosmotri"></form>
+
+<h1>Welcome to HELL!</h1>
+{% block content %}{% endblock %}
+
+</body>
+</html>

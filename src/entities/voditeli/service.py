@@ -30,13 +30,13 @@ class VoditeliService(BaseService):
                     "phone_number": res[13],
                     "med_leg": res[14],
                     "blood": res[15],
-                    "zastrah_po": res[16],
+                    "gazelle": res[16],
                     "soc": res[17],
                     "scor": res[18],
                     "maz": res[19],
                     "bus": res[20],
                     "razrjad": res[21],
-                    "class": res[22]
+                    "klass": res[22]
                 } for res in results
             ]
         }
