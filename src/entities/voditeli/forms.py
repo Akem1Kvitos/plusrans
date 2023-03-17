@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, DateField, IntegerField
+from wtforms import StringField, SubmitField, SelectField
 
 
 class VoditelAddForm(FlaskForm):
@@ -16,13 +16,13 @@ class VoditelAddForm(FlaskForm):
     note = StringField('Прим.')
     d_category = StringField('Категория Д')
     phone_number = StringField('Телефон')
-    med_leg = StringField('Мед. лег')
+    med_leg = SelectField('Мед. лег', choices=['+', "-"])
     blood = StringField('Кровь')
-    gazelle = StringField('Газель')
-    soc = StringField('Соц')
-    scor = StringField('Скор')
-    maz = StringField('Маз')
-    bus = StringField('Автобус')
+    gazelle = SelectField('Газель', choices=['+', "-"])
+    soc = SelectField('Соц', choices=['+', "-"])
+    scor = SelectField('Скор', choices=['+', "-"])
+    maz = SelectField('Маз', choices=['+', "-"])
+    bus = SelectField('Автобус', choices=['+', "-"])
     razrjad = StringField('Разряд')
     klass = StringField('Класс')
     submit = SubmitField('Подтвердить')
